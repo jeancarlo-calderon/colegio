@@ -55,6 +55,3 @@ Route::get('ausencia/listar', 'AusenciaController@listar');
 // post
 Route::post('ausencia/insertar', 'AusenciaController@insertar');
 Route::post('ausencia/actualizar', 'AusenciaController@actualizar');
-
-//RUTA DE PABLO
-//RUTA DE PABLO OTRA
