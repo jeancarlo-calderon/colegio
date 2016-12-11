@@ -4,7 +4,7 @@
     <h3>Horarios de {{ $_SESSION['usuario']->nombre }}</h3>
     <br>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <tr>
             <th>Nombre</th>
             <th>Nivel</th>

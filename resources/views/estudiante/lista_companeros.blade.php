@@ -2,9 +2,10 @@
 
 @section('content')
 
-    <h3>Listado de compañeros {{ $_SESSION['usuario']->nombre }}</h3>
+    <h3>Listado de compañeros de {{ $_SESSION['usuario']->nombre }}</h3>
+    <br>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered">
         <tr>
             <th>Nombre</th>
             <th>Apellidos</th>
@@ -20,8 +21,6 @@
                 <td>{{ $companero->nivel }}</td>
             </tr>
         @endforeach
-
-        {{--{{ var_dump($companeros) }}--}}
     </table>
 
 @endsection

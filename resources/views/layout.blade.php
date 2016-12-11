@@ -50,14 +50,54 @@
             <div class="row">
                 <h4 style="text-align: center"><span class="label label-default">MENU PRINCIPAL</span></h4>
 
+                {{--Si el usuario esta logueado muestra el menu--}}
                 @if( isset($_SESSION['usuario']) )
+
+                    {{--El usuario es administrador--}}
+                    @if($_SESSION['usuario']->id_tipo_usuario == 1)
                     <div class="col-md-12">
                         <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation" class="active"><a href="#">Home</a></li>
-                            <li role="presentation"><a href="#">Profile</a></li>
-                            <li role="presentation"><a href="#">Messages</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">Inicio</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Registrar usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Registrar asignatura</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Matricular alumno</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Dar de baja usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Dar de baja asignatura</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar asignatura</a></li>
                         </ul>
                     </div>
+                    @endif
+
+                    {{--El usuario es profesor--}}
+                    @if($_SESSION['usuario']->id_tipo_usuario == 2)
+                        <div class="col-md-12">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">Inicio</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Listar alumnos</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Listar profesores</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Poner notas</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Poner ausencias</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar notas</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar ausencias</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Listar ausencias</a></li>
+                            </ul>
+                        </div>
+                    @endif
+
+                    {{--El usuario es estudiante/padre--}}
+                    @if($_SESSION['usuario']->id_tipo_usuario == 3)
+                        <div class="col-md-12">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">Inicio</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('estudiante/lista_companeros') }}">Consulta de companeros</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('estudiante/consulta_materias') }}">Consulta de materias</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Lista profesores</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Lista notas</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Listar ausencias</a></li>
+                            </ul>
+                        </div>
+                    @endif
                 @else
                     <center>
                         <br>

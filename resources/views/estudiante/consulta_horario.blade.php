@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-hover table-bordered">
     <tr>
         <th>Dia</th>
         <th>Hora inicio</th>
