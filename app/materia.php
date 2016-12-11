@@ -10,5 +10,5 @@ class materia extends Model
 
     public $timestamps = false;
 
-    protected $fillable = array('nombre','id_horario','aula','nivel');
+    protected $fillable = array('nombre','id_horario','aula','nivel', 'activo');
 }

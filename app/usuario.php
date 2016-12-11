@@ -10,5 +10,5 @@ class usuario extends Model
 
     public $timestamps = false;
 
-    protected $fillable = array('nombre','apellidos','correo','usuario','contrasena','nivel','id_tipo_usuario','id_colegio');
+    protected $fillable = array('nombre','apellidos','correo','usuario','contrasena','nivel','id_tipo_usuario','id_colegio', 'activo');
 }

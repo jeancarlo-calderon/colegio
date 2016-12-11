@@ -40,7 +40,7 @@
             <div class="row">
                 <center>
                     <div class="col-md-12">
-                        <img src="imagenes/logoColegio.png" style="height: 130px; width: 130px; ">
+                        <img src="../imagenes/logoColegio.png" style="height: 130px; width: 130px; ">
                     </div>
                 </center>
             </div>

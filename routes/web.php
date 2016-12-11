@@ -55,3 +55,10 @@ Route::get('ausencia/listar', 'AusenciaController@listar');
 // post
 Route::post('ausencia/insertar', 'AusenciaController@insertar');
 Route::post('ausencia/actualizar', 'AusenciaController@actualizar');
+
+
+
+// Estudiante
+Route::get('estudiante/consulta_materias', 'EstudianteController@ConsultarMaterias');
+Route::get('estudiante/consulta_horario/{id_horario}', 'EstudianteController@ConsultarHorario');
+Route::get('estudiante/lista_companeros', 'EstudianteController@ListaCompaneros');
