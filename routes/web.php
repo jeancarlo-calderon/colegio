@@ -15,7 +15,9 @@
     return view('welcome');
 });*/
 
-Route::get('/', 'PrincipalController@inicio');
+
+session_start();
+
 
 // RUTAS EMPRESA
 Route::get('empresa/inicio', 'EmpresaController@inicio');
@@ -25,6 +27,14 @@ Route::get('empresa/editar', 'EmpresaController@editar');
 Route::get('empresa/listar', 'EmpresaController@listar');
 Route::post('empresa/insertar', 'EmpresaController@insertar');
 Route::post('empresa/actualizar', 'EmpresaController@actualizar');
+
+// PRINCIPAL
+Route::get('/', 'PrincipalController@inicio');
+
+// SESION
+Route::post('sesion/iniciar', 'SesionController@iniciar');
+Route::get('sesion/cerrar', 'SesionController@cerrar');
+
 
 // colegio
 Route::get('colegio/inicio', 'ColegioController@inicio');

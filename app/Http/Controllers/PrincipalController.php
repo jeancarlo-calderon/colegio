@@ -10,6 +10,6 @@ class PrincipalController extends Controller
 {
     public function inicio()
     {
-        return view("consulta");
+        return view("principal");
     }
 }
