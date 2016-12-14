@@ -14,40 +14,61 @@
                 <div class="form-group">
                     <input type="text" name="nombre" class="form-control" placeholder="Digite el nombre del usuario"
                            value="{{ old('nombre') }}">
-                    <input type="text" name="apellidos" class="form-control" placeholder="Digite los apellidos del usuario"
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="apellidos" class="form-control"
+                           placeholder="Digite los apellidos del usuario"
                            value="{{ old('apellidos') }}">
+                </div>
+
+                <div class="form-group">
                     <input type="text" name="correo" class="form-control" placeholder="Digite el correo del usuario"
                            value="{{ old('correo') }}">
+                </div>
+
+                <div class="form-group">
                     <input type="text" name="usuario" class="form-control" placeholder="Digite el usuario"
                            value="{{ old('usuario') }}">
-                    <input type="password" name="contrasena" class="form-control" placeholder="Digite la contrasena del usuario"
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="contrasena" class="form-control"
+                           placeholder="Digite la contrasena del usuario"
                            value="{{ old('contrasena') }}">
-                    {{--Listado de tipos de usuario--}}
-                    <div class="form-group">
-                        <label for="tipo">Tipo de Usuario:</label>
-                        <select name="id_tipo_usuario" class="form-control" id="tipo_usuario">
-                            @foreach($id_tipo_usuarios as $tipo)
-                                <li>
-                                    <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
-                                </li>
-                            @endforeach
-                        </select>
-                    </div>
-                    {{--Listado de tipos de usuario--}}
-                    <div class="form-group">
-                        <label for="colegios">Colegio:</label>
-                        <select name="id_colegio" class="form-control" id="$colegios">
-                            @foreach($id_colegios as $colegio)
-                                <li>
-                                    <option value="{{ $colegio->id }}">{{ $colegio->nombre }}</option>
-                                </li>
-                            @endforeach
-                        </select>
-                    </div>
+                </div>
+
+                {{--Listado de tipos de usuario--}}
+                <div class="form-group">
+                    <label for="tipo">Tipo de Usuario:</label>
+                    <select name="id_tipo_usuario" class="form-control" id="tipo_usuario">
+                        @foreach($id_tipo_usuarios as $tipo)
+                            <li>
+                                <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                            </li>
+                        @endforeach
+                    </select>
+                </div>
+
+                {{--Listado de tipos de usuario--}}
+                <div class="form-group">
+                    <label for="colegios">Colegio:</label>
+                    <select name="id_colegio" class="form-control" id="$colegios">
+                        @foreach($id_colegios as $colegio)
+                            <li>
+                                <option value="{{ $colegio->id }}">{{ $colegio->nombre }}</option>
+                            </li>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <input type="text" name="nivel" class="form-control" placeholder="Digite el nivel del usuario"
                            value="{{ old('nivel') }}">
-                    <input type="checkbox" name="activo" class="form-control" placeholder="Digite si el usuario esta activo"
-                           value="1">
+                </div>
+
+                <div class="form-group">
+                    <label name="activo" class="checkbox-inline"><input type="checkbox" value="1" checked>Activo?</label>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Registrar usuario</button>

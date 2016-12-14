@@ -11,7 +11,6 @@
             <form method="post" action="{{url('admin/insertar_matricula')}}" class="form">
             {{csrf_field()}} <!-- Cross site request forgery / falsificacion de peticion en sitios cruzados -->
 
-                <div class="form-group">
                     {{--Listado de tipos de usuario--}}
                     <div class="form-group">
                         <label for="id_usuario">Alumno:</label>
@@ -23,6 +22,7 @@
                             @endforeach
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="id_materia">Materia:</label>
                         <select name="id_materia" class="form-control" id="id_materia">
@@ -34,9 +34,7 @@
                         </select>
                     </div>
 
-                </div>
-
-                <button type="submit" class="btn btn-primary">Registrar usuario</button>
+                <button type="submit" class="btn btn-primary">Registrar matricula</button>
             </form>
         </div>
     </div>

@@ -61,9 +61,8 @@
                             <li role="presentation" class="active"><a href="{{ url('admin/registrar_usuario') }}">Registrar usuario</a></li>
                             <li role="presentation" class="active"><a href="{{ url('admin/registrar_materia') }}">Registrar asignatura</a></li>
                             <li role="presentation" class="active"><a href="{{ url('admin/registrar_matricula') }}">Matricular alumno</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('admin/listar_usuarios') }}">Dar de baja usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/listar_usuarios') }}">Desactivar / Modificar Usuario</a></li>
                             <li role="presentation" class="active"><a href="{{ url('admin/listar_materia') }}">Dar de baja asignatura</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('admin/modificar_usuario') }}">**Modificar usuario</a></li>
                             <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar asignatura</a></li>
                         </ul>
                     </div>
