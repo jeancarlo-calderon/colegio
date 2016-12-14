@@ -18,7 +18,6 @@
 
 session_start();
 
-
 // RUTAS EMPRESA
 Route::get('empresa/inicio', 'EmpresaController@inicio');
 Route::get('empresa/registrar', 'EmpresaController@registrar');
@@ -34,7 +33,6 @@ Route::get('/', 'PrincipalController@inicio');
 // SESION
 Route::post('sesion/iniciar', 'SesionController@iniciar');
 Route::get('sesion/cerrar', 'SesionController@cerrar');
-
 
 // colegio
 Route::get('colegio/inicio', 'ColegioController@inicio');
@@ -62,3 +60,4 @@ Route::post('ausencia/actualizar', 'AusenciaController@actualizar');
 Route::get('estudiante/consulta_materias', 'EstudianteController@ConsultarMaterias');
 Route::get('estudiante/consulta_horario/{id_horario}', 'EstudianteController@ConsultarHorario');
 Route::get('estudiante/lista_companeros', 'EstudianteController@ListaCompaneros');
+Route::get('estudiante/lista_profesores', 'EstudianteController@ListaProfesores');

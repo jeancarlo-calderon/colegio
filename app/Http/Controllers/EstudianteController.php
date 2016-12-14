@@ -52,4 +52,17 @@ class EstudianteController extends Controller
 
         return view('estudiante/lista_companeros', compact('companeros'));
     }
+
+    public function ListaProfesores()
+    {
+        $profesores = DB::table('usuario')
+            ->join('materia', 'usuario.id' , '=', 'materia.id_profesor')
+            ->join('matricula', 'matricula.id_materia' , '=', 'materia.id')
+            ->where('matricula.id_usuario', $_SESSION['usuario']->id)
+            ->where('usuario.id_tipo_usuario', 2)
+            ->select('usuario.id', 'usuario.nombre', 'usuario.apellidos', 'usuario.correo')
+            ->distinct()->get();
+
+        return view('estudiante/lista_profesores', compact('profesores'));
+    }
 }
