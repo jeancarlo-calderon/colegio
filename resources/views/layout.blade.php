@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Horarios de buses CR</title>
+    <title>Colegio Elias Leiva</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -58,12 +58,12 @@
                     <div class="col-md-12">
                         <ul class="nav nav-pills nav-stacked">
                             <li role="presentation" class="active"><a href="{{ url('/') }}">Inicio</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Registrar usuario</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Registrar asignatura</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Matricular alumno</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Dar de baja usuario</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Dar de baja asignatura</a></li>
-                            <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/registrar_usuario') }}">Registrar usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/registrar_materia') }}">Registrar asignatura</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/registrar_matricula') }}">Matricular alumno</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/listar_usuarios') }}">Dar de baja usuario</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/listar_materia') }}">Dar de baja asignatura</a></li>
+                            <li role="presentation" class="active"><a href="{{ url('admin/modificar_usuario') }}">**Modificar usuario</a></li>
                             <li role="presentation" class="active"><a href="{{ url('/') }}">**Modificar asignatura</a></li>
                         </ul>
                     </div>

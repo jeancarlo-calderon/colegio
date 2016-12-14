@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class matricula extends Model
 {
-    public $table = "materia";
+    public $table = "matricula";
 
     public $timestamps = false;
 

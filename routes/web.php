@@ -63,3 +63,24 @@ Route::get('estudiante/lista_companeros', 'EstudianteController@ListaCompaneros'
 Route::get('estudiante/lista_profesores', 'EstudianteController@ListaProfesores');
 Route::get('estudiante/consulta_nota/{id_materia}/{id_usuario}', 'EstudianteController@ConsultarNota');
 Route::get('estudiante/consulta_ausencia/{id_materia}/{id_usuario}', 'EstudianteController@ConsultarAusencia');
+
+
+// Administrador
+//Route::get('admin/inicio', 'AdminController@inicio');
+Route::get('admin/registrar_usuario', 'AdminController@registrar_usuario');
+Route::get('admin/registrar_materia', 'AdminController@registrar_materia');
+Route::get('admin/registrar_matricula', 'AdminController@registrar_matricula');
+Route::get('admin/listar_usuarios', 'AdminController@listar_usuarios');
+Route::get('admin/cambiar_estado_usuario/{id}/{estado}', 'AdminController@cambiar_estado_usuario');
+Route::get('admin/listar_materia', 'AdminController@listar_materias');
+Route::get('admin/cambiar_estado_materia/{id}/{estado}', 'AdminController@cambiar_estado_materia');
+Route::get('admin/modificar_usuario/{id}', 'AdminController@modificarUsuario');
+//Route::get('admin/editar', 'AdminController@editar');
+// El listar si esta funcional, pero no deberia de usarse
+//Route::get('admin/listar', 'AdminController@listar');
+// post
+Route::post('admin/insertar_usuario', 'AdminController@insertar_usuario');
+Route::post('admin/insertar_materia', 'AdminController@insertar_materia');
+Route::post('admin/insertar_matricula', 'AdminController@insertar_matricula');
+Route::post('admin/modificar_usuario', 'AdminController@modificar_usuario_post');
+//Route::post('admin/actualizar', 'AdminController@actualizar');
