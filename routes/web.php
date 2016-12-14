@@ -61,3 +61,5 @@ Route::get('estudiante/consulta_materias', 'EstudianteController@ConsultarMateri
 Route::get('estudiante/consulta_horario/{id_horario}', 'EstudianteController@ConsultarHorario');
 Route::get('estudiante/lista_companeros', 'EstudianteController@ListaCompaneros');
 Route::get('estudiante/lista_profesores', 'EstudianteController@ListaProfesores');
+Route::get('estudiante/consulta_nota/{id_materia}/{id_usuario}', 'EstudianteController@ConsultarNota');
+Route::get('estudiante/consulta_ausencia/{id_materia}/{id_usuario}', 'EstudianteController@ConsultarAusencia');

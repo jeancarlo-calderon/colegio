@@ -10,6 +10,7 @@
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Correo</th>
+            <th>Materia impartida</th>
         </tr>
 
         @foreach($profesores as $profesor)
@@ -17,6 +18,7 @@
                 <td>{{ $profesor->nombre }}</td>
                 <td>{{ $profesor->apellidos }}</td>
                 <td>{{ $profesor->correo }}</td>
+                <td>{{ $profesor->materia }}</td>
             </tr>
         @endforeach
     </table>

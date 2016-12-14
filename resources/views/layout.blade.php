@@ -91,10 +91,8 @@
                             <ul class="nav nav-pills nav-stacked">
                                 <li role="presentation" class="active"><a href="{{ url('/') }}">Inicio</a></li>
                                 <li role="presentation" class="active"><a href="{{ url('estudiante/lista_companeros') }}">Consulta de companeros</a></li>
-                                <li role="presentation" class="active"><a href="{{ url('estudiante/consulta_materias') }}">Consulta de materias</a></li>
+                                <li role="presentation" class="active"><a href="{{ url('estudiante/consulta_materias') }}">Consulta de materias (horarios, notas y ausencias)</a></li>
                                 <li role="presentation" class="active"><a href="{{ url('estudiante/lista_profesores') }}">Lista profesores</a></li>
-                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Lista notas</a></li>
-                                <li role="presentation" class="active"><a href="{{ url('/') }}">**Listar ausencias</a></li>
                             </ul>
                         </div>
                     @endif

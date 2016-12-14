@@ -33,6 +33,7 @@ class EstudianteController extends Controller
         return view('estudiante/consulta_horario', compact('horarios'));
     }
 
+    // GET: lista los companeros de clase del estudiante
     public function ListaCompaneros()
     {
         $materias = DB::table('matricula')
@@ -53,6 +54,7 @@ class EstudianteController extends Controller
         return view('estudiante/lista_companeros', compact('companeros'));
     }
 
+    // GET: lista los profesores el estudiante
     public function ListaProfesores()
     {
         $profesores = DB::table('usuario')
@@ -60,9 +62,31 @@ class EstudianteController extends Controller
             ->join('matricula', 'matricula.id_materia' , '=', 'materia.id')
             ->where('matricula.id_usuario', $_SESSION['usuario']->id)
             ->where('usuario.id_tipo_usuario', 2)
-            ->select('usuario.id', 'usuario.nombre', 'usuario.apellidos', 'usuario.correo')
+            ->select('usuario.id', 'usuario.nombre', 'usuario.apellidos', 'usuario.correo', 'materia.nombre as materia')
             ->distinct()->get();
 
         return view('estudiante/lista_profesores', compact('profesores'));
+    }
+
+    // GET: consulta las notas
+    public function ConsultarNota($id_materia, $id_usuario)
+    {
+        $nota = DB::table('nota')
+            ->where('id_usuario', $id_usuario)
+            ->where('id_materia', $id_materia)
+            ->get();
+
+        return view('estudiante/consulta_nota', compact('nota'));
+    }
+
+    // GET: consulta las ausencias
+    public function ConsultarAusencia($id_materia, $id_usuario)
+    {
+        $ausencias = DB::table('ausencia')
+            ->where('id_usuario', $id_usuario)
+            ->where('id_materia', $id_materia)
+            ->get();
+
+        return view('estudiante/consulta_ausencia', compact('ausencias'));
     }
 }
