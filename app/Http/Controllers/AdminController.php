@@ -44,7 +44,7 @@ class AdminController extends Controller
 
         usuario::create($data);
 
-        return redirect()->to('/');
+        return redirect()->to('admin/listar_usuarios');
     }
     //registrar materia
     public function registrar_materia()
@@ -70,8 +70,9 @@ class AdminController extends Controller
 
         materia::create($data);
 
-        return redirect()->to('/');
+        return redirect()->to('admin/listar_materia');
     }
+
     //registrar matricula
     public function registrar_matricula()
     {
@@ -96,7 +97,7 @@ class AdminController extends Controller
 
         matricula::create($data);
 
-        return redirect()->to('/');
+        return redirect()->to('admin/listar_materia');
     }
 
     public function listar_usuarios()
@@ -132,23 +133,6 @@ class AdminController extends Controller
 
         return redirect()->to('admin/listar_materia');
     }
-
-    public function cambiar_estado_usuario($id, $estado)
-    {
-        $newEstado = 0;
-
-        if($estado == 0)
-            $newEstado = 1;
-        else
-            $newEstado = 0;
-
-        $usuarios = DB::table('usuario')
-            ->where('id', $id)
-            ->update(['activo' => $newEstado]);
-
-        return redirect()->to('admin/listar_usuarios');
-    }
-
     public function modificarUsuario($id)
     {
         $usuario = DB::table('usuario')
@@ -183,6 +167,55 @@ class AdminController extends Controller
         $task->fill($data)->save();
 
         return redirect()->to('admin/listar_usuarios');
+    }
+
+
+    public function cambiar_estado_usuario($id, $estado)
+    {
+        $newEstado = 0;
+
+        if($estado == 0)
+            $newEstado = 1;
+        else
+            $newEstado = 0;
+
+        $usuarios = DB::table('usuario')
+            ->where('id', $id)
+            ->update(['activo' => $newEstado]);
+
+        return redirect()->to('admin/listar_usuarios');
+    }
+
+    public function modificarMateria($id)
+    {
+        $materia = DB::table('materia')
+            ->where('id', $id)
+            ->get();
+
+        $horario = DB::table('horario')->get();
+
+        return view('admin/modificar_materia', compact('materia', 'horario'));
+    }
+
+    public function modificar_materia_post()
+    {
+        // Realiza la validacion de los campos
+        $this->validate(request(),
+            [
+                'nombre'=> ['required', 'max:100'],
+                'id_horario'=> ['required', 'max:100'],
+                'aula'=> ['required', 'max:100'],
+                'nivel'=> ['required', 'max:100'],
+                'activo'=> [ ],
+            ]);
+
+        $data = request()->all();
+
+        $task = materia::findOrFail($_REQUEST['id']);
+
+        $task->fill($data)->save();
+
+        return redirect()->to('admin/listar_materia');
     }
 
     public function insertar_alumno()
